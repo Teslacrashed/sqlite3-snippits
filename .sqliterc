@@ -1,0 +1,22 @@
+-- ~/.sqliterc
+.changes on
+
+-- Formatting output
+-- Show column name headers.
+.headers on
+
+-- Set output mode to `column` (Default `list`).
+.mode column
+
+-- Show execution time after each query.
+.timer on
+
+.separator ROW "\n"
+
+.nullvalue NULL
+
+-- Prompt changes
+.prompt "> "
+
+-- Automatically turn on foriegn keys when in CLI
+PRAGMA foreign_keys = ON;

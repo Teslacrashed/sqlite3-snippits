@@ -1,0 +1,39 @@
+# .editorconfig
+# https://editorconfig.org/
+#------------------------------------------------------------------------------#
+# OPTIONS:
+# root                      = true/false
+# charset                   = latin1/utf-8/utf8-bom/utf-16be/utf-16le
+# end_of_line               = lf/cr/crlf
+# indent_size               = uint
+# indent_style              = tab/space
+# insert_final_newline      = true/false
+# tab_width                 = indent_size/uint
+# trim_trailing_whitespace  = true/false
+#==============================================================================#
+root = true
+
+# Universal Defaults
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Language :: SQL
+[*.sql]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+# Tool :: Ignore-List Files
+[*.*ignore]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+# Tool :: RC Files
+[*.*rc]
+indent_size = 2
+indent_style = tab
+tab_width = 2

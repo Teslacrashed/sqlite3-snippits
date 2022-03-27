@@ -1,0 +1,53 @@
+# .gitattributes
+#------------------------------------------------------------------------------#
+# SETTINGS (https://git-scm.com/docs/gitattributes)
+#
+# text eol=<lf/crlf>    : always convert line endings to specified on checkout
+# text auto             : let git handle converting to workspace to repo
+# binary                : don't apply line endings or diff
+# diff                  : define a diff driver external or internal
+#     built-in: ada, bibtex, cpp, csharp, css, fortran, fountain, golang, html,
+#               java, matlab, objc, pascal, perl, php, python, ruby, rust, tex
+#------------------------------------------------------------------------------#
+# Settings
+# linguist-language     : provide syntax highlighting for custom files in github
+#
+# built-in: actionscript, apache, apiblueprint applescript, awk, biml, bsl,
+#           c, cfscript, clj, cmake, coffee, elisp, conf, console, cpp,
+#           csharp, css, d, docker, dot, erb, erlang, fortran, glsl, go,
+#           gradle, graphql, groovy, haskell, hcl, ini, java, javascript,
+#           jinja, json, json-doc, llvm, lua, make, markdown, matlab, nginx,
+#           objc, pascal, perl, php, text, powershell, prometheus,
+#           properties, protobuf, puppet, python, qml, ruby, rust, scala,
+#           sed, sql, swift, terraform, tex, toml, typescript, visualbasic,
+#           xml, yaml
+#
+# special: ApacheConf - Apache configuration files
+#          conf - generic configuration files
+#          console - generic terminal shell
+#          diff - unified diffs
+#          escape - escaped content
+#          http - http req and resp
+#          shell - various shell languages
+#------------------------------------------------------------------------------#
+# Linguist Languages
+#------------------------------------------------------------------------------#
+# Ensure git, and tools that use any git hooks, picks up on file languages.
+
+# ReStructuredText
+*.rst linguist-detectable=true
+*.rst linguist-documentation=false
+*.rst linguist-language=reStructuredText
+# SQL files
+*.sql linguist-detectable=true
+*.sql linguist-language=SQL
+
+# Text files
+*.sql text
+
+# Binary files
+
+# Database files
+*.db binary
+*.sqlite binary
+*.sqlite-journal binary

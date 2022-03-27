@@ -1,0 +1,60 @@
+#
+# File and Folder Ignore List
+#
+# Instance is only commented out for example purposes
+# Always hide instance because it contains your sensitive configuration settings
+#- instance/
+
+notes/
+
+# Database :: SQL :: SQLite3
+# SQLite3 files
+*.sqlite
+*.sqlite-journal
+
+# Archive files
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.bz2
+*.bzip
+*.gz
+*.iso
+*.jar
+*.lzma
+*.rar
+*.tar
+*.tgz
+*.xz
+*.zip
+
+# OS :: Linux
+*~
+# Desktop Environment :: KDE
+.directory
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+# Kate
+# Kate swap files
+.*.kate-swp
+.swp.*
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+# Filesystem in UserSpace
+.fuse_hidden*
+# Linux trash folder which might appear on any partition or disk
+.Trash/
+.Trash-*/
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+.Trashes
+Icon?
+
+# Misc general backup/temp files
+*.[BbAaKk]
+*.[TtMmPp]
+*.[TtEeMmPp]
