@@ -1,3 +1,4 @@
+=====================
 SQLite3 Documentation
 =====================
 
@@ -68,7 +69,7 @@ Naming Table Column Constraints
 Many prefix table constraints in the identifier
 For logical reasons involving searching a database, I prefer to suffix table constraints to the identifier
 
-PRIMARY KEY  table_name_pk
+PRIMARY KEY [table_name_pk]
   - For the PRIMARY KEY column on table [user]
   - Ex: customer_pk
   - NOTE: Make sure to use the full word INTEGER, not INT, for SQLite3 to implement the built-in [sqlite_sequence] table/index
@@ -78,16 +79,16 @@ NOT NULL
   - You can add a CHECK that functionally performs the same task if you want.
   - Use suffix "_nn", table_name_column_name_nn
   - ex: CONSTRAINT [user_email_nn] ([email] IS NOT NULL)
-UNIQUE       table_name_column_name_uk
+UNIQUE [table_name_column_name_uk]
   - For an [email] column on table [user]
   - Ex: user_email_uk
 CHECK        table_name_column_name_ck
   - for a valid email string check on [email] column on table [user]
   - Ex: user_email_valid_ck
-DEFAULT      table_name_column_name_df
+DEFAULT [table_name_column_name_df]
   - For a default value on an [active] column on table [user]
   - Ex: user_active_bool_df
-FOREIGN KEY  table_name_foreign_table_name_fk
+FOREIGN KEY [table_name_foreign_table_name_fk]
   - For FOREIGN KEY from table [customer] to table [address]
   - Ex: customer_address_fk
 
@@ -136,13 +137,15 @@ Not necessary so much for SQLite3, but good to have for reference and making scr
 | Twitter max handle length  | 1   | 15   |
 +----------------------------+-----+------+
 
-+---------+---------------+
-Longitude | NUMERIC(9,6)  |
-+---------+---------------+
-Latitude  | NUMERIC(8,6)  |
-+---------+---------------+
-Money[5]  | NUMERIC(19,4) |
-+---------+---------------+
++-----------+---------------+
+| Field     | Type          |
++===========+===============+
+| Longitude | NUMERIC(9,6)  |
++-----------+---------------+
+| Latitude  | NUMERIC(8,6)  |
++-----------+---------------+
+| Money[5]  | NUMERIC(19,4) |
++-----------+---------------+
 
   - NUMERIC is preferred in money to prevent rounding errors that occur in DECIMAL
 
@@ -193,23 +196,27 @@ UNIQUE KEYS and UNIQUE INDEXES are a logical distinction, but otherwise similar.
 UNIQUE INDEX should be used when FOREIGN KEY columns are included in the index column list
 
 Non-unique Indexes
+------------------
 table_name_column_name_idx for non-clustered, non-unique indexes
-CREATE INDEX [customer_idx] ON [customer] ([name_last], [name_first]);
+
+``CREATE INDEX [customer_idx] ON [customer] ([name_last], [name_first]);``
 
 Unique Indexes
+--------------
 table_name_column_name_udx for non-clustered, unique indexes
 For an index on table employee that has a FOREIGN KEY to [department] table
-CREATE UNIQUE INDEX [employee_department_id_id_udx] ON [customer] ([department_id], [id]);
+
+``CREATE UNIQUE INDEX [employee_department_id_id_udx] ON [customer] ([department_id], [id]);``
 
 Other
 -----
 
 Comparator - Not Equals
-`<>` is ANSI compliant, preferred over `!=`
+``<>`` is ANSI compliant, preferred over ``!=``
 
 .sqliterc
 ---------
 
 Place file in root of your home directory to improve/change your SQLite3 CLI experience
 
-`mv .sqliterc ${HOME}`
+``mv .sqliterc ${HOME}``
