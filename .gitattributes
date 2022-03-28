@@ -41,9 +41,11 @@
 # SQL files
 *.sql linguist-detectable=true
 *.sql linguist-language=SQL
+.sqliterc linguist-language=Shell
 
 # Text files
 *.sql text
+.sqliterc text
 
 # Binary files
 

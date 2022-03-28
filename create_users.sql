@@ -1,4 +1,4 @@
--- vim: set ft=sql:
+-- vim: set filetype=sql:
 -- Order of table-column declarations
 -- Followed by the recommended suffix to add to constraint names
 -- NOTE: While it's often recommended to prefix the constraint names, I prefer suffixing them for technical reasons

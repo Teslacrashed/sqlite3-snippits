@@ -183,4 +183,5 @@ Comparator - Not Equals
 ---------
 
 Place file in root of your home directory to improve/change your SQLite3 CLI experience
-mv .sqliterc ${HOME}
+
+`mv .sqliterc ${HOME}`
