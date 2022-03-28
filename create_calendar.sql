@@ -2,18 +2,18 @@
 CREATE TABLE IF NOT EXISTS [day_of_week] (
 	[id] INTEGER
 		CONSTRAINT [day_of_week_pk] PRIMARY KEY AUTOINCREMENT
-		CONSTRAINT [day_of_week_nn] NOT NULL,
+		NOT NULL,
 	[alpha_1] NCHAR(1)
-		CONSTRAINT [day_of_week_alpha_1_nn] NOT NULL
+		NOT NULL
 		CONSTRAINT [day_of_week_alpha_1_uk] UNIQUE,
 	[alpha_2] NCHAR(2)
-		CONSTRAINT [day_of_week_alpha_2_nn] NOT NULL
+		NOT NULL
 		CONSTRAINT [day_of_week_alpha_2_uk] UNIQUE,
 	[alpha_3] NCHAR(3)
-		CONSTRAINT [day_of_week_alpha_3_nn] NOT NULL
+		NOT NULL
 		CONSTRAINT [day_of_week_alpha_3_uk] UNIQUE,
 	[name_full] [NVARCHAR](9)
-		CONSTRAINT [day_of_week_name_full_nn] NOT NULL
+		NOT NULL
 		CONSTRAINT [day_of_week_name_full_uk] UNIQUE
 );
 
@@ -30,12 +30,12 @@ VALUES
 CREATE TABLE IF NOT EXISTS [month_of_year] (
 	[id] INTEGER
 		CONSTRAINT [month_of_year_pk] PRIMARY KEY AUTOINCREMENT
-		CONSTRAINT [month_of_year_nn] NOT NULL,
+		NOT NULL,
 	[alpha_3] NCHAR(3)
-		CONSTRAINT [month_of_year_alpha_3_nn] NOT NULL
+		NOT NULL
 		CONSTRAINT [month_of_year_alpha_3_uk] UNIQUE,
 	[name_full] NVARCHAR(9)
-		CONSTRAINT [month_of_year_name_full_nn] NOT NULL
+		NOT NULL
 		CONSTRAINT [month_of_year_name_full_uk] UNIQUE
 );
 
