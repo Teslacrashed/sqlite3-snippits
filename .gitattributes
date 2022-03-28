@@ -1,4 +1,5 @@
 # .gitattributes
+# vim: set filetype=gitattributes:
 #------------------------------------------------------------------------------#
 # SETTINGS (https://git-scm.com/docs/gitattributes)
 #
@@ -34,6 +35,11 @@
 #------------------------------------------------------------------------------#
 # Ensure git, and tools that use any git hooks, picks up on file languages.
 
+# EditorConfig
+.editorconfig linguist-language=EditorConfig
+# git
+.gitattributes linguist-language=Git-Attributes
+.gitignore linguist-language=Ignore-List
 # ReStructuredText
 *.rst linguist-detectable=true
 *.rst linguist-documentation=false
@@ -41,11 +47,20 @@
 # SQL files
 *.sql linguist-detectable=true
 *.sql linguist-language=SQL
-.sqliterc linguist-language=Shell
 
-# Text files
-*.sql text
-.sqliterc text
+README.* linguist-documentation=true
+
+# Text :: Data
+.editorconfig text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+# Text :: Programming
+*.sql text eol=lf
+.sqliterc text eol=lf
+
+# Text :: Prose
+*.rst text eol=lf
 
 # Binary files
 
