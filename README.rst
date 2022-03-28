@@ -175,16 +175,17 @@ Use {noun}_at for "timestamps"
 Fields involving DATETIME or TIME, typically.
 
 Examples:
-   - created_at
-   - updated_at
-   - logged_in_at
+   - created_at_datetime
+   - updated_at_datetime
+   - logged_in_at_datetime
+   - recorded_at_time
 
 Use {verb}_on for dates
 Fields involving DATE, typically.
 
 Examples:
-   - reported_on
-   - discovered_on
+   - reported_on_date
+   - discovered_on_date
 
 Use {noun}_in_{measurement_name} for fields recording measured units
 Provide clarity in what is being measured by including the measurement in the name
@@ -210,12 +211,14 @@ UNIQUE INDEX should be used when FOREIGN KEY columns are included in the index c
 
 Non-unique Indexes
 ------------------
+
 table_name_column_name_idx for non-clustered, non-unique indexes
 
 ``CREATE INDEX [customer_idx] ON [customer] ([name_last], [name_first]);``
 
 Unique Indexes
 --------------
+
 table_name_column_name_udx for non-clustered, unique indexes
 For an index on table employee that has a FOREIGN KEY to [department] table
 
