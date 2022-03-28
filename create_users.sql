@@ -12,7 +12,10 @@
 
 -- datetime
 -- The following sqlite build-in function is the closets to ISO-8601 standardized time.
--- NOTE: datetimes should always be in UTC timezone, not local time, for meta data like created and updated columns.
+-- Creates a 29 character long entry, down to milliseconds.
+-- NOTE: datetimes should always be in UTC timezone, not local time, for meta data like:
+-- created_at_datetime
+-- updatedat_datetime
 -- strftime('%Y-%m-%dT%H:%M:%f+00:00', 'now')
 
 -- CHECK constraints
@@ -32,7 +35,7 @@ CREATE TABLE [user] (
 	[email] VARCHAR(128)
 		NOT NULL
 		CONSTRAINT [user_email_uk] UNIQUE
-		CONSTRAINT [user_email_ck] CHECK ([email] REGEXP "^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$")
+		CONSTRAINT [user_email_valid_ck] CHECK ([email] REGEXP "^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$")
 		COLLATE NOCASE,
 	[password] VARCHAR(128)
 		NOT NULL,
@@ -47,12 +50,12 @@ CREATE TABLE [user] (
 	[login_count] INTEGER
 		NOT NULL
 		CONSTRAINT [user_login_count_df] DEFAULT ((0)),
-	[created_datetime] DATETIME
+	[created_at_datetime] DATETIME
 		NOT NULL
-		CONSTRAINT [user_datetime_df] DEFAULT (strftime('%Y-%m-%dT%H:%M:%f+00:00', 'now')),
-	[updated_datetime] DATETIME
+		CONSTRAINT [user_created_at_datetime_df] DEFAULT (strftime('%Y-%m-%dT%H:%M:%f+00:00', 'now')),
+	[updated_at_datetime] DATETIME
 		NOT NULL
-		CONSTRAINT [user_updated_df] DEFAULT (strftime('%Y-%m-%dT%H:%M:%f+00:00', 'now'))
+		CONSTRAINT [user_updated_at_datetime_df] DEFAULT (strftime('%Y-%m-%dT%H:%M:%f+00:00', 'now'))
 );
 
 INSERT INTO [user] ([id], [email], [password])
