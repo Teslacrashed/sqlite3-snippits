@@ -31,6 +31,7 @@ Use underscores between words.
 Helps identifiers stand out clearly from keywords (i.e.: SELECT id, name_first FROM customers)
 Pro: Easiest to read.
 Con: Uses more space.
+
 Examples:
    - customer
    - user
@@ -42,12 +43,13 @@ PascalCase
 
 Pro: Uses less space.
 Con: Can be harder to read.
+
 Examples:
    - CustomerAddress
    - UserRole
 
 All-capitals looks horrendous.
-All-capitals with underscores looks less horrendous but uses up even more screen space.
+All-capitals with underscores looks less horrendous but uses up more screen space.
 
 Refrain from usage of acronyms, as many things can share the same acronym.
 Refrain from usage of abbreviations, as people do not always have the same idea for how to abbreviate words.
@@ -59,12 +61,15 @@ Prefix view names with "vw_"
 For views you may want to use plural-form nouns.
 Commonly, you may want a simple view for your user table that only shows active users, so "vw_users" is a sensible name.
 Just try to be consistent in why/how you use plurals, or any convention.
+
 Examples:
    - vw_customers
    - vw_users
 
 Naming Triggers
 Prefix triggers with "tr_"
+
+Examples:
    - tr_user_update_login
 
 Naming Table Column Constraints
@@ -159,6 +164,7 @@ Naming Table Columns
 Fields involving BOOLEAN values
 Use adjectives.
 Do not prefix with "is_", save space, those three extra characters will make large queries uglier and longer.
+
 Examples:
    - active
    - visible
@@ -167,6 +173,7 @@ Examples:
 
 Use {noun}_at for "timestamps"
 Fields involving DATETIME or TIME, typically.
+
 Examples:
    - created_at
    - updated_at
@@ -174,6 +181,7 @@ Examples:
 
 Use {verb}_on for dates
 Fields involving DATE, typically.
+
 Examples:
    - reported_on
    - discovered_on
@@ -181,6 +189,7 @@ Examples:
 Use {noun}_in_{measurement_name} for fields recording measured units
 Provide clarity in what is being measured by including the measurement in the name
 Do not just use "height" or "weight"
+
 Examples:
    - weight_in_pounds
    - height_in_meters
