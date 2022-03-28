@@ -92,30 +92,58 @@ FOREIGN KEY  table_name_foreign_table_name_fk
   - Ex: customer_address_fk
 
 Common Field Values
+-------------------
 
 Not necessary so much for SQLite3, but good to have for reference and making scripts cross-db compatible.
 
-Common Field                Values
--                           Min Max
-Hostname                    1   255
-Domain Name                 4   253
-Email Address               7   254
-Email Address [1]           3   254
-Telephone Number            10  15
-Telephone Number [2]        3   26
-HTTP(S) URL w domain name   11  2083
-URL [3]                     6   2083
-Postal Code [4]             2   11
-IP Address (incl ipv6)      7   45
-youtube max channel length  20
-facebook max name length    50
-twitter max handle length   15
-email max length            255
-street address              100
++----------------------------+-----+------+
+| Field                      | Min | Max  |
++============+===============+=====+======+
+| Hostname                   | 1   | 255  |
++----------------------------+-----+------+
+| Domainname                 | 4   | 253  |
++----------------------------+-----+------+
+| IP Address (incl ipv6)     | 7   | 45   |
++----------------------------+-----+------+
+| email max length           | 4   | 255  |
++----------------------------+-----+------+
+| URL                        | 6   | 2083 |
++----------------------------+-----+------+
+| HTTP(S) URL w/ Domainname  | 11  | 2083 |
++----------------------------+-----+------+
+| Telephone Number           | 10  | 15   |
++----------------------------+-----+------+
+| Telephone Number (intl)    | 3   | 26   |
++----------------------------+-----+------+
+| Email Address              | 7   | 254  |
++----------------------------+-----+------+
+| Email Address [1]          | 3   | 254  |
++----------------------------+-----+------+
+| City                       | 1   | 60   |
++----------------------------+-----+------+
+| State                      | 1   | 100  |
++----------------------------+-----+------+
+| Country                    | 1   | 55   |
++----------------------------+-----+------+
+| Postal Code [4]            | 2   | 11   |
++----------------------------+-----+------+
+| Street address             | 1   | 100  |
++----------------------------+-----+------+
+| YouTube max channel length | 1   | 20   |
++----------------------------+-----+------+
+| Facebook max name length   | 1   | 50   |
++----------------------------+-----+------+
+| Twitter max handle length  | 1   | 15   |
++----------------------------+-----+------+
 
-Longitude                   NUMERIC(9,6)
-Latitude                    NUMERIC(8,6)
-Money[5]                    NUMERIC(19,4)
++---------+---------------+
+Longitude | NUMERIC(9,6)  |
++---------+---------------+
+Latitude  | NUMERIC(8,6)  |
++---------+---------------+
+Money[5]  | NUMERIC(19,4) |
++---------+---------------+
+
   - NUMERIC is preferred in money to prevent rounding errors that occur in DECIMAL
 
 Naming Table Columns
